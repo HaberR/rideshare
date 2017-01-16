@@ -1,0 +1,67 @@
+function request(url, type, options) {
+  var success = options.success || function () {console.log("doneso")};
+  var failure = options.success || function () {
+    console.log(type + " request to " + url + " failed")
+  }
+  var types = ["GET", "POST"];
+  var http = new XMLHttpRequest();
+  var params = options.params || "";
+  if (types.indexOf(type) > -1) {
+    http.open(type, url + (type === "GET" ? "?" + params : "") , true);
+    http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+        success(http.responseText);
+      } /* else {
+        failure();
+      }*/
+    }
+    http.send(type === "POST" ? params : null);
+  } else {
+    console.log(type + " not an accepted type");
+    failure();
+  }
+}
+  
+
+
+function getLatLong(address, options) {
+  var googleapi = "https://maps.googleapis.com/maps/api/geocode/json";
+  var key = options.key || "AIzaSyB-v_-f7o1v3kQZDsAebvK8wdoyjh51cDs";
+  options.params = "key=" + key + "&address=" + address;
+  var oldSuccess = options.success;
+  options.success = function(respText) {
+    var loc = JSON.parse(respText).results[0].geometry.location;
+    oldSuccess(loc.lat, loc.long);
+  }
+  request(googleapi, "GET", options);
+  /*
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.onreadystatechange = function() { 
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+      success(xmlHttp.responseText);
+    } else {
+      failure(xmlHttp.responseText);
+    }
+  }
+  xmlHttp.open("GET", url, true); // true for asynchronous 
+  xmlHttp.send(null);
+  */
+}
+
+module.exports = function (address, req_body, options) {
+  var success = options.success || function () {};
+  var failure = options.failure || function () {};
+  var server = options.server || "localhost:8983/rideshare/update/docs";
+  var callback = function (lat, lon, options) {
+    req_body.destination = [lat, lon].join(" ");
+    console.log(req_body);
+    options.params = req_body;
+    request(server, "POST", options);
+  }
+  getLatLong(address, { 
+    key : options.key, 
+    success: function (lat, lon) {
+      callback(lat, lon, {success : success});
+    }
+  });
+}

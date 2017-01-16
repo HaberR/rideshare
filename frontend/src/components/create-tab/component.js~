@@ -1,6 +1,26 @@
 var angular = require('angular');
+var post = require("../../api/post.js");
 
 angular.module('createTab').
   component('createTab', {
-    templateUrl: "components/create-tab/create-tab.template.html"
+    templateUrl: "components/create-tab/template.html",
+    controller: function($scope) {
+      this.submit = function () {
+        console.log(this);
+        var address = [this.address, this.city, this.state, this.postalCode].join(" ");
+        var solr_req = {
+          comments : this.comments,
+          cost : this.price,
+          date : this.departureDate,
+          phone : this.phone,
+          email : this.email
+        };
+        post({
+          address: "335 Sycamore Ave Merion Station PA 19066",
+          success: function (loc) {
+            console.log(loc)
+          }
+        });
+      }
+    }
   });

@@ -1,22 +1,24 @@
 var $ = require('jquery');
-require("./components/create-tab/create-tab.module.js");
-require("./components/create-tab/create-tab.component.js");
+require("./components/create-tab/module.js");
 
 var angular = require("angular");
+var angularmaterial = require("angular-material");
 
-angular.module("main", [
-    'createTab'
+var main = angular.module("main", [
+    'createTab',
+    'ngMaterial'
 ]);
 
+
+/*
 $(".tablinks").click(function (evt) {
   var tabname = evt.target.id;
   var i, tabcontent, tablinks;
   tabcontent = $(".tabcontent");
   
-  /*
-  for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-  }*/
+//  for (i = 0; i < tabcontent.length; i++) {
+//      tabcontent[i].style.display = "none";
+      
   tablinks = $(".tablinks");
   for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -25,3 +27,4 @@ $(".tablinks").click(function (evt) {
   evt.currentTarget.className += " active";
 
 });
+*/
