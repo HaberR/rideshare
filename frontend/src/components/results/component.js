@@ -3,7 +3,7 @@
  */
 var angular = require('angular');
 angular.module('results')
-    .component('results',{
+    .component('resultscomp',{
         templateUrl : "components/results/template.html",
         controller : function($scope) {
             this.selected = {};

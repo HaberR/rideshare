@@ -71879,7 +71879,7 @@ function locReq (address, key) {
 
 
 angular.module('listing').
-    component('listing', {
+    component('listingcomp', {
     templateUrl : "components/listing/template.html",
     controller : function ($scope) {
         $scope.selected = [];
@@ -71946,7 +71946,7 @@ require("./component.js");
  */
 var angular = require('angular');
 angular.module('results')
-    .component('results',{
+    .component('resultscomp',{
         templateUrl : "components/results/template.html",
         controller : function($scope) {
             this.selected = {};
@@ -71970,7 +71970,7 @@ require("./component.js");
  */
 
 angular.module('search')
-    .component('search', {
+    .component('searchcomp', {
         templateUrl : "components/search/template.html",
         controller : function ($scope) {
             this.submit = function() {

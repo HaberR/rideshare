@@ -39,7 +39,7 @@ function locReq (address, key) {
 
 
 angular.module('listing').
-    component('listing', {
+    component('listingcomp', {
     templateUrl : "components/listing/template.html",
     controller : function ($scope) {
         $scope.selected = [];

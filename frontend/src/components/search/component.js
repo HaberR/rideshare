@@ -3,7 +3,7 @@
  */
 
 angular.module('search')
-    .component('search', {
+    .component('searchcomp', {
         templateUrl : "components/search/template.html",
         controller : function ($scope) {
             this.submit = function() {
