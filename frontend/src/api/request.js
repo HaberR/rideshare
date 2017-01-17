@@ -11,18 +11,23 @@ Request.prototype.convert = function(params) {
     if (typeof params == 'object') {
         var paramList = [];
         for (var key in params) {
-            paramList.push(key + "=" + params[key]);
+            if (Array.isArray(params[key])) {
+                params[key].forEach(function(elmt) {
+                    paramList.push(key + '=' + elmt);
+                });
+            } else{
+                paramList.push(key + "=" + params[key]);
+            }
         }
         paramString = "?" + paramList.join("&");
     } else {
         paramString = params ? "?" + params : "";
     }
-    console.log(paramString);
     return paramString;
 };
 
 Request.prototype.success = function () {};
 
-Request.prototype.failure = function () {console.log(arguments)};
+Request.prototype.failure = function () {};
 
 module.exports = Request;

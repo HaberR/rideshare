@@ -523,8 +523,7 @@
     <auth-constraint/>
   </security-constraint>
 
-  <!-- Rafe added this for cross-origin allowing. Taken from
-  http://chris.eldredge.io/blog/2015/04/02/solr-jetty-cors/ -->
+  <!-- Rafe added this for cross-origin allowing -->
   <filter>
     <filter-name>cross-origin</filter-name>
     <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>

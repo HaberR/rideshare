@@ -1,0 +1,66 @@
+<div layout="column" ng-cloak>
+
+
+    <md-content layout-padding>
+        <div>
+            <form name="searchForm" ng-submit="$ctrl.submit()">
+
+                <h4>Enter your destination</h4>
+                <md-input-container class="md-block">
+                    <label>Address</label>
+                    <input ng-model="$ctrl.address">
+                </md-input-container>
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>City</label>
+                        <input ng-model="$ctrl.city">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>State</label>
+                        <input ng-model="$ctrl.state">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Postal Code</label>
+                        <input name="postalCode" ng-model="$ctrl.postalCode" placeholder="12345"
+                               required ng-pattern="/^[0-9]{5}$/">
+
+                        <div ng-messages="userForm.postalCode.$error" role="alert">
+                            <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                                code.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+                <h4>Departing between</h4>
+                <div layout="row">
+                    <md-input-container>
+                        <label>earliest</label>
+                        <md-datepicker ng-model="$ctrl.departingFrom"></md-datepicker>
+                    </md-input-container>
+                    <p>and</p>
+                    <md-input-container>
+                        <label>latest</label>
+                        <md-datepicker ng-model="$ctrl.departingTo"></md-datepicker>
+                    </md-input-container>
+                </div>
+
+
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block">
+                        <label>max price</label>
+                        <input ng-model="$ctrl.price">
+                    </md-input-container>
+
+                    <md-button type="submit">Submit</md-button>
+
+                </div>
+
+            </form>
+        </div>
+    </md-content>
+</div>

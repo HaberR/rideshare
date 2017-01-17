@@ -20,6 +20,8 @@ angular.module('createTab').
         var address = [this.address, this.city, this.state, this.postalCode].join(" ");
 
         var solr_req = {
+          name : this.name,
+          city : this.city,
           comments : this.comments,
           cost : this.price,
           date : this.departureDate,

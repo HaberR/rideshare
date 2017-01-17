@@ -1,0 +1,57 @@
+<table>
+    <tr ng-repeat="entry in entries" ng-click="$ctrl.clicked(entry)">
+        <!--<td>{{entry.email}}</td>-->
+        <!--<td>{{entry.phone}}</td>-->
+        <td>{{entry.city}}</td>
+        <!--<td>{{entry.name}}</td>-->
+        <td>{{entry.date.toDateString()}}</td>
+        <td>{{entry.cost}}</td>
+    </tr>
+</table>
+<!--<div layout="row">-->
+    <!--<div flex>Destination</div>-->
+    <!--<div flex>Departure date</div>-->
+    <!--<div flex>Cost of transportation</div>-->
+<!--</div>-->
+<!--<div layout="row"-->
+     <!--ng-repeat="entry in entries">-->
+    <!--<div flex>-->
+        <!--{{entry.city}}-->
+    <!--</div>-->
+    <!--<div flex>-->
+        <!--{{entry.date}}-->
+    <!--</div>-->
+    <!--<div flex>-->
+        <!--{{entry.cost}}-->
+    <!--</div>-->
+<!--</div>-->
+<!--<md-content>-->
+<!--<div style="height:100px;">-->
+    <!--<md-list>-->
+        <!--<md-list-item ng-repeat="entry in entries" ng-click="null"-->
+        <!--class="md-2-line">-->
+            <!--<div class="md-list-item-text">-->
+            <!--<div flex>-->
+                <!--{{entry.city}}-->
+            <!--</div>-->
+            <!--<div flex>-->
+            <!--{{entry.date}}-->
+            <!--</div>-->
+            <!--<div flex>-->
+            <!--{{entry.cost}}-->
+            <!--</div>-->
+            <!--</div>-->
+        <!--</md-list-item>-->
+    <!--</md-list>-->
+<!--</div>-->
+<!--</md-content>-->
+
+
+    <!--md-cols="12"-->
+    <!--md-row-height="8px"-->
+    <!--ng-repeat="entry in entries">-->
+    <!--<md-grid-tile-->
+        <!--md-rowspan="2" md-colspan="12">-->
+        <!--<p>{{entry.email}}</p>-->
+    <!--</md-grid-tile>-->
+<!--</md-grid-list>-->

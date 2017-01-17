@@ -1,0 +1,30 @@
+<div layout="column" ng-show="chosen">
+    <div layout="row">
+        <div flex>
+            Name: {{selected.name}}
+        </div>
+
+    </div>
+    <div layout="row">
+        <div flex>
+            email: {{selected.email}}
+        </div>
+        <div flex>
+            phone: {{selected.phone}}
+        </div>
+    </div>
+    <div layout="row">
+        <div flex>
+            departure: {{selected.date.toDateString()}}
+        </div>
+        <div flex>
+            fee: {{selected.cost}}
+        </div>
+    </div>
+    <div flex>
+        comments: {{selected.comments}}
+    </div>
+</div>
+<div ng-hide="chosen">
+    <h4>nothing selected</h4>
+</div>
