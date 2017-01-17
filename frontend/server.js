@@ -8,6 +8,8 @@ app.get("/", function(req,res) {
 
 app.use(express.static('src'));
 app.use(express.static('node_modules/angular-material'));
+app.use(express.static('node_modules/angular-material-data-table/dist'));
+
 
 app.listen(3000, function () {
   console.log("listening on port 3000")

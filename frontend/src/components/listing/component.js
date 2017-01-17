@@ -1,7 +1,6 @@
 /**
  * Created by rafaelhaber on 1/15/17.
  */
-var angular = require('angular');
 var Get = require("../../api/get.js");
 
 /*Taken from
@@ -43,6 +42,8 @@ angular.module('listing').
     component('listing', {
     templateUrl : "components/listing/template.html",
     controller : function ($scope) {
+        $scope.selected = [];
+
         var url = "http://localhost:8983/solr/rideshare/query";
         var params = {
             q : "*:*"
