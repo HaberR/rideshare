@@ -4,14 +4,12 @@
     <md-content layout-padding>
         <div>
             <form name="searchForm" ng-submit="$ctrl.submit()">
-
-                <h4>Enter your destination</h4>
+                <label>Destination:</label>
                 <md-input-container class="md-block">
                     <label>Address</label>
                     <input ng-model="$ctrl.address">
                 </md-input-container>
-
-                <div layout-gt-sm="row">
+                <div layout="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>City</label>
                         <input ng-model="$ctrl.city">
@@ -35,31 +33,25 @@
                         </div>
                     </md-input-container>
                 </div>
-
-                <h4>Departing between</h4>
-                <div layout="row">
-                    <md-input-container>
-                        <label>earliest</label>
-                        <md-datepicker ng-model="$ctrl.departingFrom"></md-datepicker>
+                <label>Departure time</label>
+                <div layout="row" layout-align="space-around start">
+                    <md-input-container flex>
+                        <label>From</label>
+                        <input ng-model="$ctrl.departingFrom" placeholder="mm/dd/yyyy"/>
                     </md-input-container>
-                    <p>and</p>
-                    <md-input-container>
-                        <label>latest</label>
-                        <md-datepicker ng-model="$ctrl.departingTo"></md-datepicker>
+                    <md-input-container flex>
+                        <label>To</label>
+                        <input ng-model="$ctrl.departingTo" placeholder="mm/dd/yyyy"/>
                     </md-input-container>
                 </div>
-
-
-                <div layout-gt-sm="row">
-                    <md-input-container class="md-block">
-                        <label>max price</label>
+                <label>Details</label>
+                <div layout="row" layout-align="space-between start">
+                    <md-input-container>
+                        <label>max Fee</label>
                         <input ng-model="$ctrl.price">
                     </md-input-container>
-
                     <md-button type="submit">Submit</md-button>
-
                 </div>
-
             </form>
         </div>
     </md-content>

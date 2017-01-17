@@ -8,17 +8,15 @@ angular.module('search')
         controller : function ($scope) {
             this.submit = function() {
                 // console.log(this);
+                var earliest = this.departingFrom ? new Date(this.departingFrom) : undefined;
+                var latest = this.departingTo ? new Date(this.departingTo) : undefined;
                 var address = [this.address, this.city, this.state, this.postalCode].join(" ");
                 $scope.$emit("execute-search",{
                     destination : address,
                     maxFee : this.price,
-                    earliest : this.departingFrom,
-                    latest : this.departingTo
+                    earliest : earliest,
+                    latest : latest
                 });
-                // var maxfee = this.price;
-                // var earliest = this.departingFrom || "NOW";
-                // var latest = this.departingTo || "*";
-                // var timeline = "[" + earliest + " TO " + latest + "]";
             }
         }
 });
