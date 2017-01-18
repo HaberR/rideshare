@@ -21,10 +21,19 @@
     "destination" : "40.344929 -74.656799",
     "city" :"Princeton",
     "comments" : "Princeton campus",
-    "cost" : "80",
+    "cost" : 80,
     "email" : "bp@princeton.edu",
     "phone" : "212-322-9245",
     "name" : "prince",
     "date" : "2018-02-16T17:12:11.511Z"
+  }, {
+    "destination" : "42.449771 -76.482009",
+    "city" : "Ithaca",
+    "comments" : "The physical sciences building",
+    "cost" : 120,
+    "email" : "psb@cornell.edu",
+    "phone" : "314-212-5555",
+    "name" : "physical Sciences",
+    "date" : "2017-02-3T17:12:11.000Z"
   }
 ]

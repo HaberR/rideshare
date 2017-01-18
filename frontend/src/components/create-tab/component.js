@@ -23,8 +23,8 @@ angular.module('createTab').
           name : this.name,
           city : this.city,
           comments : this.comments,
-          cost : this.price,
-          date : this.departureDate,
+          cost : Number(this.price),
+          date : new Date(this.departureDate),
           phone : this.phone,
           email : this.email
         };
