@@ -6,6 +6,17 @@ the backend (located at backend/schema.xml). For the front end, you will need to
 installed. Then navigate to the frontend directory and run ```npm install``` to gather all the 
 dependencies. To start the frontend, execute ```node_modules/browserify/bin/cmd.js /src/index.js -o src/bundle.js``` 
 and then ```node server.js```. Navigate to localhost:3000 to visit the website.
+#Preview
+##Browse tab
+![alt text][browse]
+
+[browse]: https://github.com/HaberR/rideshare/blob/master/browse-tab.png "Browse tab"
+
+##Post tab
+![alt text][post]
+
+[post]: https://github.com/HaberR/rideshare/blob/master/post-tab.png "Post tab"
+
 #Design
 ##backend
 The backend is a solr instance. The schema and sample data are included in the folder titled backend. 
